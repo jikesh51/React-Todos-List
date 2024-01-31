@@ -10,7 +10,7 @@ export default function Todos(props) {
         {props.todos.length > 0 ? (
           props.todos.map((todo) => {
             return (
-              <Todo todo={todo} key={todo.sNo} onDelete={props.onDelete} />
+              <Todo todo={todo} todos={props.todos} key={todo.sNo} onDelete={props.onDelete} />
             );
           })
         ) : (

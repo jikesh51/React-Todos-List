@@ -48,7 +48,11 @@ const App = () => {
             exact
             path="/"
             element={
-              <Todos todos={todos} setTodos={setTodos} onDelete={onDelete} />
+              <Todos
+                todos={todos}
+                setTodos={setTodos}
+                onDelete={onDelete}
+              />
             }
           />
           <Route
@@ -56,6 +60,14 @@ const App = () => {
             exact
             path="/create-todo"
             element={<AddTodo setTodos={setTodos} todos={todos} />}
+          />
+          <Route
+            name="editTodo"
+            exact
+            path="/edit-todo/:id"
+            element={
+              <AddTodo setTodos={setTodos} todos={todos} />
+            }
           />
           <Route name="about" exact path="/about" element={<About />} />
           <Route path="*" element={<Navigate to="/" />} />
